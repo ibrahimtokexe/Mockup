@@ -1,0 +1,1191 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacit And Semra Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Righteous&family=Monoton&family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Amatic+SC&family=Cinzel&family=Poiret+One&display=swap" rel="stylesheet">
+        <style>
+            /* Local OTF font added by assistant */
+            @font-face {
+                font-family: 'Avente Regular';
+                src: url('fontlar/Avante-Regular.otf') format('opentype');
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            /* Kullanım örneği: sınıf ile uygulayın */
+            .avente-regular {
+                font-family: 'Avente Regular', sans-serif;
+            }
+        </style>
+        <style>
+            :root {
+                --primary-color: #7cc3ff;
+                --text-color: #e6eef8;
+                --muted-text: #9fb3d6;
+                --background-dark-1: #03050a;
+                --background-dark-2: #071026;
+                --card-bg: rgba(255,255,255,0.03);
+                --accent-color: #6c83d6;
+                --shadow-color: rgba(0, 0, 0, 0.6);
+
+                /* Premium neon palette (text & logo should match) */
+                --neon-color-1: #c9d1f4; /* Cool White */
+                --neon-color-2: #fee576; /* Warm White */
+                --neon-color-3: #0600f9; /* Blue */
+                --neon-color-4: #00c4fc; /* Ice Blue */
+                --neon-color-5: #ff0016; /* Red */
+                --neon-color-6: #fa4a00; /* Orange */
+                --neon-color-7: #ffee00; /* Lemon Yellow */
+                --neon-color-8: #fdbc18; /* Golden Yellow */
+                --neon-color-9: #00e24c; /* Green */
+                --neon-color-10: #ff4bff; /* Pink */
+                --neon-color-11: #9e00ff; /* Purple */
+
+                /* Logo colors mirror neon/text colors for consistent visuals */
+                --logo-color-1: var(--neon-color-1);
+                --logo-color-2: var(--neon-color-2);
+                --logo-color-3: var(--neon-color-3);
+                --logo-color-4: var(--neon-color-4);
+                --logo-color-5: var(--neon-color-5);
+                --logo-color-6: var(--neon-color-6);
+                --logo-color-7: var(--neon-color-7);
+                --logo-color-8: var(--neon-color-8);
+                --logo-color-9: var(--neon-color-9);
+                --logo-color-10: var(--neon-color-10);
+                --logo-color-11: var(--neon-color-11);
+            }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(124,139,255,0.06), transparent 10%),
+                        linear-gradient(180deg, var(--background-dark-1) 0%, var(--background-dark-2) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .main-container {
+            display: flex;
+            padding: 3rem 2rem;
+            gap: 3rem;
+            min-height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .preview-area {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            border-radius: 18px;
+            padding: 36px;
+            box-shadow: 0 18px 60px var(--shadow-color), inset 0 1px 0 rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        #preview-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding-top: 4%;
+        }
+
+        .neon-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 72px;
+            color: lch(82.42% 44.06 218.28);
+            text-shadow: 
+                0 0 7px #ff69b4,
+                0 0 10px #ff69b4,
+                0 0 21px #ff69b4,
+                0 0 42px #ff69b4;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            word-break: break-word;
+            position: relative;
+            z-index: 2;
+            margin-top: 0.5rem;
+        }
+
+        .neon-text.dim {
+            opacity: 0.3;
+            filter: brightness(0.4) contrast(0.8);
+        }
+
+        /* Parlak mod için neon yazı renkleri - artık değişkenleri kullanır */
+        .neon-text.color-1 { color: var(--neon-color-1); text-shadow: 0 0 8px var(--neon-color-1), 0 0 18px var(--neon-color-1), 0 0 36px var(--neon-color-1); }
+        .neon-text.color-2 { color: var(--neon-color-2); text-shadow: 0 0 8px var(--neon-color-2), 0 0 18px var(--neon-color-2), 0 0 36px var(--neon-color-2); }
+        .neon-text.color-3 { color: var(--neon-color-3); text-shadow: 0 0 8px var(--neon-color-3), 0 0 18px var(--neon-color-3), 0 0 36px var(--neon-color-3); }
+        .neon-text.color-4 { color: var(--neon-color-4); text-shadow: 0 0 8px var(--neon-color-4), 0 0 18px var(--neon-color-4), 0 0 36px var(--neon-color-4); }
+        .neon-text.color-5 { color: var(--neon-color-5); text-shadow: 0 0 8px var(--neon-color-5), 0 0 18px var(--neon-color-5), 0 0 36px var(--neon-color-5); }
+        .neon-text.color-6 { color: var(--neon-color-6); text-shadow: 0 0 8px var(--neon-color-6), 0 0 18px var(--neon-color-6), 0 0 36px var(--neon-color-6); }
+        .neon-text.color-7 { color: var(--neon-color-7); text-shadow: 0 0 8px var(--neon-color-7), 0 0 18px var(--neon-color-7), 0 0 36px var(--neon-color-7); }
+        .neon-text.color-8 { color: var(--neon-color-8); text-shadow: 0 0 8px var(--neon-color-8), 0 0 18px var(--neon-color-8), 0 0 36px var(--neon-color-8); }
+        .neon-text.color-9 { color: var(--neon-color-9); text-shadow: 0 0 8px var(--neon-color-9), 0 0 18px var(--neon-color-9), 0 0 36px var(--neon-color-9); }
+        .neon-text.color-10 { color: var(--neon-color-10); text-shadow: 0 0 8px var(--neon-color-10), 0 0 18px var(--neon-color-10), 0 0 36px var(--neon-color-10); }
+        .neon-text.color-11 { color: var(--neon-color-11); text-shadow: 0 0 8px var(--neon-color-11), 0 0 18px var(--neon-color-11), 0 0 36px var(--neon-color-11); }
+
+        /* Sönük mod için neon yazı renkleri - çok zayıf ışıma efekti */
+        .neon-text.dim.color-1 { color: var(--neon-color-1); text-shadow: 0 0 1px var(--neon-color-1); }
+        .neon-text.dim.color-2 { color: var(--neon-color-2); text-shadow: 0 0 1px var(--neon-color-2); }
+        .neon-text.dim.color-3 { color: var(--neon-color-3); text-shadow: 0 0 1px var(--neon-color-3); }
+        .neon-text.dim.color-4 { color: var(--neon-color-4); text-shadow: 0 0 1px var(--neon-color-4); }
+        .neon-text.dim.color-5 { color: var(--neon-color-5); text-shadow: 0 0 1px var(--neon-color-5); }
+        .neon-text.dim.color-6 { color: var(--neon-color-6); text-shadow: 0 0 1px var(--neon-color-6); }
+        .neon-text.dim.color-7 { color: var(--neon-color-7); text-shadow: 0 0 1px var(--neon-color-7); }
+        .neon-text.dim.color-8 { color: var(--neon-color-8); text-shadow: 0 0 1px var(--neon-color-8); }
+        .neon-text.dim.color-9 { color: var(--neon-color-9); text-shadow: 0 0 1px var(--neon-color-9); }
+        .neon-text.dim.color-10 { color: var(--neon-color-10); text-shadow: 0 0 1px var(--neon-color-10); }
+        .neon-text.dim.color-11 { color: var(--neon-color-11); text-shadow: 0 0 1px var(--neon-color-11); }
+
+        /* Renk butonları için CSS - Tüm renkler (merkez renkli, beyaz halka ve sarı dış çerçeve) */
+        .color-button[data-color="1"]  { background: var(--neon-color-1); }
+        .color-button[data-color="2"]  { background: var(--neon-color-2); }
+        .color-button[data-color="3"]  { background: var(--neon-color-3); }
+        .color-button[data-color="4"]  { background: var(--neon-color-4); }
+        .color-button[data-color="5"]  { background: var(--neon-color-5); }
+        .color-button[data-color="6"]  { background: var(--neon-color-6); }
+        .color-button[data-color="7"]  { background: var(--neon-color-7); }
+        .color-button[data-color="8"]  { background: var(--neon-color-8); }
+        .color-button[data-color="9"]  { background: var(--neon-color-9); }
+        .color-button[data-color="10"] { background: var(--neon-color-10); }
+        .color-button[data-color="11"] { background: var(--neon-color-11); }
+
+        /* Logo renk butonları için CSS - Tüm renkler (aynı stil) */
+        .logo-color-button[data-color="1"]  { background: var(--logo-color-1); }
+        .logo-color-button[data-color="2"]  { background: var(--logo-color-2); }
+        .logo-color-button[data-color="3"]  { background: var(--logo-color-3); }
+        .logo-color-button[data-color="4"]  { background: var(--logo-color-4); }
+        .logo-color-button[data-color="5"]  { background: var(--logo-color-5); }
+        .logo-color-button[data-color="6"]  { background: var(--logo-color-6); }
+        .logo-color-button[data-color="7"]  { background: var(--logo-color-7); }
+        .logo-color-button[data-color="8"]  { background: var(--logo-color-8); }
+        .logo-color-button[data-color="9"]  { background: var(--logo-color-9); }
+        .logo-color-button[data-color="10"] { background: var(--logo-color-10); }
+        .logo-color-button[data-color="11"] { background: var(--logo-color-11); }
+
+        /* Logo renk filtreleri için CSS - Tüm filtreler */
+        .custom-logo[data-color="1"] { filter: brightness(0) saturate(100%) invert(85%) sepia(12%) saturate(1234%) hue-rotate(190deg) brightness(101%) contrast(94%); }
+        .custom-logo[data-color="2"] { filter: brightness(0) saturate(100%) invert(83%) sepia(31%) saturate(1352%) hue-rotate(40deg) brightness(103%) contrast(107%); }
+        .custom-logo[data-color="3"] { filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7482%) hue-rotate(240deg) brightness(102%) contrast(143%); }
+        .custom-logo[data-color="4"] { filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(1952%) hue-rotate(170deg) brightness(101%) contrast(101%); }
+        .custom-logo[data-color="5"] { filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(7482%) hue-rotate(358deg) brightness(101%) contrast(101%); }
+        .custom-logo[data-color="6"] { filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(7482%) hue-rotate(357deg) brightness(101%) contrast(101%); }
+        .custom-logo[data-color="7"] { filter: brightness(0) saturate(100%) invert(77%) sepia(29%) saturate(1352%) hue-rotate(358deg) brightness(103%) contrast(107%); }
+        .custom-logo[data-color="8"] { filter: brightness(0) saturate(100%) invert(77%) sepia(29%) saturate(1352%) hue-rotate(358deg) brightness(103%) contrast(107%); }
+        .custom-logo[data-color="9"] { filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(1952%) hue-rotate(115deg) brightness(101%) contrast(101%); }
+        .custom-logo[data-color="10"] { filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(7482%) hue-rotate(358deg) brightness(101%) contrast(101%); }
+        .custom-logo[data-color="11"] { filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(7482%) hue-rotate(270deg) brightness(101%) contrast(101%); }
+
+        .custom-logo {
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            margin-right: 5px;
+            vertical-align: middle;
+            display: inline-block;
+            transition: filter 0.3s ease;
+            height: 60px;
+            margin-top: 35px;
+        }
+
+        /* logo-wrapper: use mask-image to tint logos reliably */
+        .logo-wrapper {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            height: 60px;
+            width: 120px;
+            background-color: var(--logo-color-1);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            cursor: grab;
+            z-index: 5;
+        }
+
+        .custom-logo.color-1 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(225deg) saturate(0.8); }
+        .custom-logo.color-2 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(45deg); }
+        .custom-logo.color-3 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(245deg); }
+        .custom-logo.color-4 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(175deg); }
+        .custom-logo.color-5 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(355deg); }
+        .custom-logo.color-6 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(315deg); }
+        .custom-logo.color-7 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(55deg); }
+        .custom-logo.color-8 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(35deg); }
+        .custom-logo.color-9 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(115deg); }
+        .custom-logo.color-10 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(285deg); }
+        .custom-logo.color-11 { filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(265deg); }
+
+        /* Önizlemedeki ölçü etiketlerini tamamen gizle */
+        .dimensions {
+            display: none;
+        }
+
+        .height {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+        }
+
+        .width {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .controls {
+            width: 100%;
+            max-width: 1200px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            backdrop-filter: blur(6px) saturate(120%);
+            padding: 1.75rem;
+            border-radius: 14px;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.035);
+            box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+        }
+
+        .controls button {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+            color: #e6eef8;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            margin: 0.25rem 0;
+            width: auto;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+        }
+
+        .controls button:hover {
+            background: rgba(255,255,255,0.04);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(2,6,23,0.8);
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section h2 {
+            font-size: 26px;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section p {
+            color: #64748b;
+            margin-bottom: 1rem;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .brightness-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .brightness-button {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .brightness-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .brightness-button:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #userText {
+            flex-grow: 1;
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            font-size: 16px;
+            background: rgba(0,0,0,0.35);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        #userText:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .emoji-button {
+            padding: 0.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a1a;
+        }
+
+        .emoji-button:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .emoji-panel {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.75rem;
+            z-index: 1000;
+            max-height: 320px;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        /* Selected character styling for per-letter mode */
+        .char-selected {
+            outline: 2px solid rgba(124,140,255,0.45);
+            outline-offset: 4px;
+            border-radius: 4px;
+            box-shadow: 0 6px 20px rgba(124,140,255,0.18), 0 0 12px rgba(124,140,255,0.12);
+        }
+
+        .char {
+            display: inline-block;
+            transition: all 0.15s ease;
+            padding: 0 2px;
+        }
+
+        /* When Avante font is active, avoid forcing case — preserve user input
+           but improve rendering and spacing to reduce visual size differences */
+        .preview-text-avante {
+            text-transform: none;
+            letter-spacing: 0.01em;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .preview-text-avante .char {
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        /* Subtle halo behind the text that follows the active color */
+        #previewTextDisplay {
+            position: relative;
+        }
+
+        #previewTextDisplay::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% + 160px);
+            height: calc(100% + 120px);
+            background: radial-gradient(circle at center, var(--active-color, rgba(255,255,255,0.15)) 0%, transparent 30%);
+            filter: blur(28px);
+            opacity: 0.14;
+            z-index: 1;
+            pointer-events: none;
+            border-radius: 18px;
+            mix-blend-mode: screen;
+        }
+
+        .emoji-panel.active {
+            display: grid;
+        }
+
+        .emoji {
+            font-size: 24px;
+            padding: 1rem;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+        }
+
+        .emoji:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .emoji img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .emoji:hover img {
+            transform: scale(1.2);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tabs button {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 5px;
+            background: #111;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tabs button.active {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #000;
+            border-color: #00d4ff;
+        }
+
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .font-option {
+            border: 1px solid rgba(255,255,255,0.04);
+            padding: 0.9rem 1rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.18s ease;
+            background: rgba(255,255,255,0.02);
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .font-option:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Metin renk paleti – inline, merkezde */
+        .color-picker {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.75rem auto;
+            padding: 0.25rem;
+            border-radius: 999px;
+            background: transparent;
+            width: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .color-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.08);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: transparent;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+        }
+
+        .color-button:hover {
+            transform: scale(1.15) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .color-button.active {
+            transform: scale(1.2);
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2), 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-color-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Logo renk paleti – modern tasarım */
+        .logo-color-picker {
+            display: grid;
+            grid-template-columns: repeat(11, auto);
+            gap: 0.6rem;
+            margin: 0.75rem auto;
+            padding: 0.9rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.015);
+            border: 1px solid rgba(255,255,255,0.04);
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-color-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background-color: transparent;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-color-button::before {
+            display: none;
+        }
+
+        .logo-color-button:hover {
+            transform: scale(1.15) translateY(-2px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-color-button.active {
+            transform: scale(1.2);
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2), 0 4px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                padding: 2rem 1rem;
+            }
+
+            .preview-area {
+                min-height: 400px;
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            
+            .controls {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+    <div class="preview-area">
+            <div class="dimensions height"></div>
+            <div id="preview-content">
+                <!-- Logo ve Metin Buraya Gelecek -->
+                <div class="neon-text" id="previewTextDisplay">MOCKUP</div>
+            </div>
+            <div class="dimensions width"></div>
+</div>
+
+        <div class="controls">
+            <div class="section">
+                <h2>1. METNİNİZİ GİRİN</h2>
+                <p>Birkaç basit adımda kendi özel neon tabelanızı oluşturun.</p>
+                <div class="brightness-control">
+                    <button class="brightness-button active">Parlak</button>
+                    <button class="brightness-button">Sönük</button>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="userText" placeholder="Metninizi buraya girin">
+                    <button class="emoji-button" onclick="toggleEmojiPanel()">😊</button>
+                    <div class="emoji-panel" id="emojiPanel">
+                        <div class="emoji" onclick="addLogo('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzY0NDFhNSIgZD0iTTIuMTQ5IDBMMSAyLjE0OXYxOS43MDJIMS44NTFMMi4xNDkgMjRsNC4wNjQtNC4wNjRoNS4yMTNsNjI3Ny02LjI3N3YtMS40NjhMMjIgMS40NjhWMHgyLjE0OXptMi4xMjggMi4xNDloMTUuNTc0bDMuNDA0My40MDR2MTIuMzRsLTUuNTMyIDUuNTMySDguNTMybC00LjI1NSA0LjI1NXYtNC4yNTVIMi4xNDlWMi4xNDl6bTEzLjQwNCA3LjQ0N1Y0LjI5OGgtMi4xNDl2NS4yOThoMi4xNDl6bS01LjI5OCAwdjQuMjk4aC0yLjE0OXY1LjI5OGgyLjE0OXoiLz48L3N2Zw==')">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzY0NDFhNSIgZD0iTTIuMTQ5IDBMMSAyLjE0OXYxOS43MDJIMS44NTFMMi4xNDkgMjRsNC4wNjQtNC4wNjRoNS4yMTNsNjI3Ny02LjI3N3YtMS40NjhMMjIgMS40NjhWMHgyLjE0OXptMi4xMjggMi4xNDloMTUuNTc0bDMuNDA0My40MDR2MTIuMzRsLTUuNTMyIDUuNTMySDguNTMybC00LjI1NSA0LjI1NXYtNC4yNTVIMi4xNDlWMi4xNDl6bTEzLjQwNCA3LjQ0N1Y0LjI5OGgtMi4xNDl2NS4yOThoMi4xNDl6bS01LjI5OCAwdjQuMjk4aC0yLjE0OXY1LjI5OGgyLjE0OXoiLz48L3N2Zw==" alt="Twitch">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo7.png', 'Logo 7')">
+                            <img src="images/Logo7.png" alt="Logo 7">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo3.png', 'Logo 3')">
+                            <img src="images/Logo3.png" alt="Logo 3">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo12.png', 'Logo 12')">
+                            <img src="images/Logo12.png" alt="Logo 12">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo5.png', 'Logo 5')">
+                            <img src="images/Logo5.png" alt="Logo 5">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo9.png', 'Logo 9')">
+                            <img src="images/Logo9.png" alt="Logo 9">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo2.png', 'Logo 2')">
+                            <img src="images/Logo2.png" alt="Logo 2">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo14.png', 'Logo 14')">
+                            <img src="images/Logo14.png" alt="Logo 14">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo6.png', 'Logo 6')">
+                            <img src="images/Logo6.png" alt="Logo 6">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo11.png', 'Logo 11')">
+                            <img src="images/Logo11.png" alt="Logo 11">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo4.png', 'Logo 4')">
+                            <img src="images/Logo4.png" alt="Logo 4">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo8.png', 'Logo 8')">
+                            <img src="images/Logo8.png" alt="Logo 8">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo13.png', 'Logo 13')">
+                            <img src="images/Logo13.png" alt="Logo 13">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo1.png', 'Logo 1')">
+                            <img src="images/Logo1.png" alt="Logo 1">
+                        </div>
+                        <div class="emoji" onclick="addCustomImage('images/Logo10.png', 'Logo 10')">
+                            <img src="images/Logo10.png" alt="Logo 10">
+                        </div>
+                         <div class="emoji" onclick="addCustomImage('images/Logo15.png', 'Logo 15')">
+                            <img src="images/Logo15.png" alt="Logo 15">
+                         </div>
+                             <div class="emoji" onclick="addCustomImage('images/Logo16.png', 'Logo 16')">
+                            <img src="images/Logo16.png" alt="Logo 16">
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. FONT SEÇİN</h2>
+                <p>50'den fazla yazı tipi arasından seçim yapın.</p>
+                <div class="font-grid">
+                    <div class="font-option avante" style="font-family: 'Avente Regular', sans-serif;" data-font="Avente Regular">1. Avante</div>
+                    <div class="font-option" style="font-family: 'Dancing Script', cursive;">2. Dancing Script</div>
+                    <div class="font-option" style="font-family: 'Pacifico', cursive;">3. Pacifico</div>
+                    <div class="font-option" style="font-family: 'Quicksand', sans-serif;">4. Quicksand</div>
+                    <div class="font-option" style="font-family: 'Orbitron', sans-serif;">5. Orbitron</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>3. RENK SEÇİN</h2>
+                <p>Metin rengini seçin</p>
+                <div class="color-picker">
+                    <button class="color-button" data-color="1" title="#c9d1f4"></button>
+                    <button class="color-button" data-color="2" title="#fee576"></button>
+                    <button class="color-button" data-color="3" title="#0600f9"></button>
+                    <button class="color-button" data-color="4" title="#00c4fc"></button>
+                    <button class="color-button" data-color="5" title="#ff0016"></button>
+                    <button class="color-button" data-color="6" title="#fa4a00"></button>
+                    <button class="color-button" data-color="7" title="#ffee00"></button>
+                    <button class="color-button" data-color="8" title="#fdbc18"></button>
+                    <button class="color-button" data-color="9" title="#00e24c"></button>
+                    <button class="color-button" data-color="10" title="#ff4bff"></button>
+                    <button class="color-button" data-color="11" title="#9e00ff"></button>
+        </div>
+        <div style="text-align:center;margin-top:0.6rem;">
+            <button id="perLetterToggle" class="brightness-button">Harfe Göre Renk</button>
+        </div>
+    </div>
+
+            <div class="section">
+                <h2>4. LOGO RENGİ</h2>
+                <p>Logo rengini seçin</p>
+                <div class="logo-color-picker">
+                    <button class="logo-color-button" data-color="1" title="#c9d1f4"></button>
+                    <button class="logo-color-button" data-color="2" title="#fee576"></button>
+                    <button class="logo-color-button" data-color="3" title="#0600f9"></button>
+                    <button class="logo-color-button" data-color="4" title="#00c4fc"></button>
+                    <button class="logo-color-button" data-color="5" title="#ff0016"></button>
+                    <button class="logo-color-button" data-color="6" title="#fa4a00"></button>
+                    <button class="logo-color-button" data-color="7" title="#ffee00"></button>
+                    <button class="logo-color-button" data-color="8" title="#fdbc18"></button>
+                    <button class="logo-color-button" data-color="9" title="#00e24c"></button>
+                    <button class="logo-color-button" data-color="10" title="#ff4bff"></button>
+                    <button class="logo-color-button" data-color="11" title="#9e00ff"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Metin güncelleme + per-letter renk desteği
+        let perLetterMode = false;
+        let selectedColorNumber = '1';
+        
+        function removeColorClasses(elem) {
+            const toRemove = [];
+            elem.classList.forEach(cl => { if (/^color-\d+$/.test(cl)) toRemove.push(cl); });
+            toRemove.forEach(cl => elem.classList.remove(cl));
+        }
+
+        const userInput = document.getElementById('userText');
+        const previewTextDisplay = document.getElementById('previewTextDisplay');
+
+        let selectedChar = null;
+
+        function buildPreviewText(text) {
+            // reset any selected char when rebuilding
+            selectedChar = null;
+            const t = (text || 'MOCKUP');
+            if (!perLetterMode) {
+                previewTextDisplay.innerHTML = '';
+                previewTextDisplay.textContent = t;
+                // apply whole color class without removing other helper classes
+                removeColorClasses(previewTextDisplay);
+                previewTextDisplay.classList.add('neon-text');
+                if (previewTextDisplay.classList.contains('dim')) previewTextDisplay.classList.add('dim');
+                previewTextDisplay.classList.add(`color-${selectedColorNumber}`);
+                updateDimensions();
+                return;
+            }
+
+            // per-letter: split into spans
+            previewTextDisplay.innerHTML = '';
+            for (let i = 0; i < t.length; i++) {
+                const ch = t[i] === ' ' ? '\u00A0' : t[i];
+                const span = document.createElement('span');
+                span.className = 'char';
+                span.textContent = ch;
+                span.dataset.index = i;
+                span.style.cursor = 'pointer';
+                span.addEventListener('click', function() {
+                    // select this char for color application
+                    document.querySelectorAll('.char').forEach(c => c.classList.remove('char-selected'));
+                    this.classList.add('char-selected');
+                    selectedChar = this;
+                });
+                previewTextDisplay.appendChild(span);
+            }
+            updateDimensions();
+        }
+
+        function applyColorToChar(span, colorNumber) {
+            const root = getComputedStyle(document.documentElement);
+            const color = root.getPropertyValue(`--neon-color-${colorNumber}`).trim();
+            span.style.color = color;
+            span.style.textShadow = `0 0 8px ${color}, 0 0 18px ${color}, 0 0 36px ${color}`;
+            span.dataset.color = colorNumber;
+            // deselect after applying
+            span.classList.remove('char-selected');
+            if (selectedChar === span) selectedChar = null;
+        }
+
+        userInput.addEventListener('input', function(e) {
+            buildPreviewText(e.target.value);
+        });
+
+        // Font seçimi
+        document.querySelectorAll('.font-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const fontFamily = window.getComputedStyle(this).fontFamily;
+                previewTextDisplay.style.fontFamily = fontFamily;
+                // If this option is the Avante font (we added data-font), force uppercase visual by adding helper class
+                if (this.dataset && this.dataset.font === 'Avente Regular') {
+                    previewTextDisplay.classList.add('preview-text-avante');
+                } else {
+                    previewTextDisplay.classList.remove('preview-text-avante');
+                }
+                updateDimensions();
+            });
+        });
+
+        // Renk butonları (tüm metin veya per-letter için kullanılır)
+        document.querySelectorAll('.color-button').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.color-button').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const colorNumber = this.getAttribute('data-color');
+                const root = getComputedStyle(document.documentElement);
+                const color = (root.getPropertyValue(`--neon-color-${colorNumber}`) || root.getPropertyValue('--neon-color-1')).trim();
+                // update global active color for halo
+                document.documentElement.style.setProperty('--active-color', color);
+
+                if (perLetterMode && selectedChar) {
+                    // apply to the currently selected character
+                    applyColorToChar(selectedChar, colorNumber);
+                } else {
+                    // set selected color and (if not per-letter) apply to whole text
+                    selectedColorNumber = colorNumber;
+                    if (!perLetterMode) {
+                        previewTextDisplay.className = 'neon-text';
+                        if (previewTextDisplay.classList.contains('dim')) previewTextDisplay.classList.add('dim');
+                        previewTextDisplay.classList.add(`color-${colorNumber}`);
+                    }
+                }
+            });
+        });
+
+        // per-letter toggle button behaviour
+        const perLetterToggleBtn = document.getElementById('perLetterToggle');
+        if (perLetterToggleBtn) {
+            perLetterToggleBtn.addEventListener('click', function() {
+                perLetterMode = !perLetterMode;
+                this.classList.toggle('active', perLetterMode);
+                this.textContent = perLetterMode ? 'Harfe Göre Renk: Açık' : 'Harfe Göre Renk';
+                // rebuild preview representation
+                buildPreviewText(userInput.value);
+            });
+        }
+
+        // Logo renk seçimi
+        document.querySelectorAll('.logo-color-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const logoColorButtons = document.querySelectorAll('.logo-color-button');
+                logoColorButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const colorNumber = this.getAttribute('data-color');
+
+                // Apply background color to mask-based wrappers (preferred)
+                const root = getComputedStyle(document.documentElement);
+                const bg = (root.getPropertyValue(`--logo-color-${colorNumber}`) || root.getPropertyValue('--logo-color-1') || '#ffffff').trim();
+                const wrappers = document.querySelectorAll('.logo-wrapper');
+                wrappers.forEach(w => {
+                    w.style.backgroundColor = bg;
+                });
+
+                // Fallback: if plain img logos exist, set data-color so CSS filters apply
+                const logos = document.querySelectorAll('.custom-logo');
+                logos.forEach(logo => {
+                    for (let i = 1; i <= 11; i++) {
+                        logo.removeAttribute('data-color');
+                    }
+                    logo.setAttribute('data-color', colorNumber);
+                });
+            });
+        });
+
+        // Boyut güncelleme fonksiyonu
+        function updateDimensions() {
+            const previewContent = document.getElementById('preview-content');
+            const rect = previewContent.getBoundingClientRect();
+            
+            const heightCm = (rect.height / 96 * 2.54).toFixed(2);
+            const heightIn = (rect.height / 96).toFixed(2);
+            const widthCm = (rect.width / 96 * 2.54).toFixed(2);
+            const widthIn = (rect.width / 96).toFixed(2);
+
+            document.querySelector('.dimensions.height').textContent = `${heightCm}cm / ${heightIn}in`;
+            document.querySelector('.dimensions.width').textContent = `${widthCm}cm / ${widthIn}in`;
+        }
+
+        // Sayfa yüklendiğinde boyutları güncelle
+        window.addEventListener('load', updateDimensions);
+        window.addEventListener('resize', updateDimensions);
+
+        // Emoji panel kontrolü
+        function toggleEmojiPanel() {
+            const panel = document.getElementById('emojiPanel');
+            panel.classList.toggle('active');
+        }
+
+        // Emoji ekleme (basit metin ekleme - isteğe bağlı olarak logoya çevrilebilir)
+        function addEmoji(emoji) {
+            const input = document.getElementById('userText');
+            const cursorPos = input.selectionStart;
+            const textBefore = input.value.substring(0, cursorPos);
+            const textAfter = input.value.substring(cursorPos);
+            
+            input.value = textBefore + emoji + textAfter;
+            input.focus();
+            input.selectionStart = cursorPos + emoji.length;
+            input.selectionEnd = cursorPos + emoji.length;
+            
+            // Preview'i güncelle (sadece metin inputunu günceller)
+            document.getElementById('userText').dispatchEvent(new Event('input'));
+            updateDimensions();
+
+            // Emoji panelini kapat
+            document.getElementById('emojiPanel').classList.remove('active');
+        }
+
+        // Parlaklık kontrolü
+        function toggleBrightness(mode) {
+            const previewTextDisplay = document.getElementById('previewTextDisplay');
+            const buttons = document.querySelectorAll('.brightness-button');
+            
+            buttons.forEach(button => button.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (mode === 'bright') {
+                previewTextDisplay.classList.remove('dim');
+            } else {
+                previewTextDisplay.classList.add('dim');
+            }
+        }
+
+        // Özel görsel ekleme fonksiyonu (preview-content içine ekler)
+        function addCustomImage(imageUrl, imageName) {
+            const previewContent = document.getElementById('preview-content');
+            const previewTextDisplay = document.getElementById('previewTextDisplay');
+            
+            // Önce mevcut logoları temizle
+            const existingLogos = previewContent.querySelectorAll('.custom-logo, .logo-wrapper');
+            existingLogos.forEach(logo => logo.remove());
+            
+            // Görsel yükleme kontrolü
+            const img = new Image();
+            img.onerror = function() {
+                alert('Görsel yüklenemedi! Lütfen görsel dosyasının images klasöründe olduğundan emin olun.');
+                return;
+            };
+            img.onload = function() {
+                // wrapper ile logo ekle (mask ile renk uygulamak için)
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('logo-wrapper');
+                wrapper.setAttribute('data-src', imageUrl);
+                wrapper.style.webkitMaskImage = `url(${imageUrl})`;
+                wrapper.style.maskImage = `url(${imageUrl})`;
+                // Başlangıç rengi: seçili logo-color-button varsa onu al
+                const activeLogoBtn = document.querySelector('.logo-color-button.active');
+                const colorNumber = activeLogoBtn ? activeLogoBtn.getAttribute('data-color') : '1';
+                const root = getComputedStyle(document.documentElement);
+                const bg = root.getPropertyValue(`--logo-color-${colorNumber}`) || root.getPropertyValue('--logo-color-1');
+                wrapper.style.backgroundColor = (bg || '#ffffff').trim();
+
+                // Ebat ve pozisyon
+                wrapper.style.height = '60px';
+                wrapper.style.width = '120px';
+                wrapper.style.position = 'absolute';
+                wrapper.style.top = '30px';
+                wrapper.style.left = '30px';
+                wrapper.style.cursor = 'grab';
+
+                previewContent.insertBefore(wrapper, previewTextDisplay);
+                if (typeof makeDraggable === 'function') makeDraggable(wrapper);
+                updateDimensions();
+            };
+            img.src = imageUrl;
+            
+            // Emoji panelini kapat
+            document.getElementById('emojiPanel').classList.remove('active');
+        }
+
+        // Logo ekleme fonksiyonunu güncelle
+        function addLogo(logoUrl) {
+            const previewContent = document.getElementById('preview-content');
+            const previewTextDisplay = document.getElementById('previewTextDisplay');
+
+            // Önce mevcut logoları temizle
+            const existingLogos = previewContent.querySelectorAll('.custom-logo, .logo-wrapper');
+            existingLogos.forEach(logo => logo.remove());
+
+            // Logo ekleme: wrapper ile mask kullan (daha güvenilir renk eşlemesi)
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('logo-wrapper');
+            wrapper.setAttribute('data-src', logoUrl);
+            wrapper.style.webkitMaskImage = `url(${logoUrl})`;
+            wrapper.style.maskImage = `url(${logoUrl})`;
+            // Başlangıç rengi
+            const activeLogoBtn = document.querySelector('.logo-color-button.active');
+            const colorNumber = activeLogoBtn ? activeLogoBtn.getAttribute('data-color') : '1';
+            const root = getComputedStyle(document.documentElement);
+            const bg = root.getPropertyValue(`--logo-color-${colorNumber}`) || root.getPropertyValue('--logo-color-1');
+            wrapper.style.backgroundColor = (bg || '#ffffff').trim();
+            wrapper.style.height = '60px';
+            wrapper.style.width = '120px';
+            wrapper.style.position = 'absolute';
+            wrapper.style.top = '30px';
+            wrapper.style.left = '30px';
+            wrapper.style.cursor = 'grab';
+            wrapper.style.zIndex = '5';
+
+            if (typeof makeDraggable === 'function') makeDraggable(wrapper);
+            previewContent.insertBefore(wrapper, previewTextDisplay);
+
+            updateDimensions();
+            document.getElementById('emojiPanel').classList.remove('active');
+        }
+
+        // Emoji panel dışına tıklandığında paneli kapat
+        document.addEventListener('click', function(event) {
+            const panel = document.getElementById('emojiPanel');
+            const button = document.querySelector('.emoji-button');
+
+            if (!panel.contains(event.target) && !button.contains(event.target)) {
+                panel.classList.remove('active');
+            }
+        });
+
+        // Basit draggable fonksiyonu (pointer events kullanır)
+        function makeDraggable(elem) {
+            if (!elem) return;
+            elem.style.position = elem.style.position || 'absolute';
+            let dragging = false;
+            let offsetX = 0, offsetY = 0;
+
+            elem.addEventListener('pointerdown', function(e) {
+                dragging = true;
+                elem.setPointerCapture && elem.setPointerCapture(e.pointerId);
+                const rect = elem.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+                elem.style.cursor = 'grabbing';
+            });
+
+            elem.addEventListener('pointermove', function(e) {
+                if (!dragging) return;
+                const parent = elem.parentElement.getBoundingClientRect();
+                let left = e.clientX - parent.left - offsetX;
+                let top = e.clientY - parent.top - offsetY;
+                left = Math.max(0, Math.min(left, parent.width - elem.offsetWidth));
+                top = Math.max(0, Math.min(top, parent.height - elem.offsetHeight));
+                elem.style.left = left + 'px';
+                elem.style.top = top + 'px';
+            });
+
+            elem.addEventListener('pointerup', function(e) {
+                dragging = false;
+                try { elem.releasePointerCapture && elem.releasePointerCapture(e.pointerId); } catch(_){}
+                elem.style.cursor = 'grab';
+            });
+
+            elem.addEventListener('pointercancel', function() { dragging = false; elem.style.cursor = 'grab'; });
+        }
+
+        // Doküman yüklendiğinde başlangıç ayarları ve event listenerlar
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDimensions();
+            
+              // Başlangıçta varsayılan yazı rengini ayarla (ilk butonu aktif yap)
+              const initialColorButton = document.querySelector('.color-button[data-color="1"]');
+            if (initialColorButton) {
+                 initialColorButton.classList.add('active');
+                 // set selectedColorNumber and apply to preview
+                 try {
+                     selectedColorNumber = '1';
+                     document.getElementById('previewTextDisplay').classList.add('color-1');
+                     const root = getComputedStyle(document.documentElement);
+                     const c = (root.getPropertyValue('--neon-color-1') || '#ffffff').trim();
+                     document.documentElement.style.setProperty('--active-color', c);
+                 } catch(e){}
+             }
+
+             // Başlangıçta varsayılan logo rengini ayarla (ilk butonu aktif yap)
+             const initialLogoColorButton = document.querySelector('.logo-color-button[data-color="1"]');
+             if (initialLogoColorButton) {
+                 initialLogoColorButton.click();
+             }
+
+            // Başlangıçta varsayılan parlaklığı ayarla
+            const brightButton = document.querySelector('.brightness-button.active');
+            if (brightButton) {
+                const mode = brightButton.textContent.toLowerCase().includes('parlak') ? 'bright' : 'dim';
+                toggleBrightness(mode);
+            }
+
+            // Parlaklık butonları için event listenerları
+            const brightnessButtons = document.querySelectorAll('.brightness-button');
+            brightnessButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const mode = this.textContent.toLowerCase().includes('parlak') ? 'bright' : 'dim';
+                    toggleBrightness(mode);
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
+```
